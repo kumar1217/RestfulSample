@@ -10,7 +10,7 @@
 <li><a href="restful-services/sampleService/json/employee/222">GET JSON Response By Id</a></li>
 </ul>
 
-<h1>Below is POST example</h1>
+<h2>Below is POST example</h2>
 <form action="restful-services/sampleService/postEmployee" method="post">
 Enter Id:<input type="text" name="id"/><br/><br/>
 Enter Name:<input type="text" name="name"/><br/><br/>  
@@ -54,9 +54,9 @@ function submitJsonRequest(){
         dataType: "json",
         success: function(response){
             for(var i in response){
-            	alert("Employee Id ==  "+response[i].employeeId);
-            	alert("Employee Name ==  "+response[i].employeeName);
-            	alert("Employee Job ==   "+response[i].employeeJob);
+            	alert("Employee Id in Response ==  "+response[i].employeeId);
+            	alert("Employee Name in Response ==  "+response[i].employeeName);
+            	alert("Employee Job in Response ==   "+response[i].employeeJob);
             }
         }
   });

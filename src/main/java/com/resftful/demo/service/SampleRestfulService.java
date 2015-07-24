@@ -1,5 +1,8 @@
 package com.resftful.demo.service;
 
+/**
+ * RestService class to handle rest request .
+ * */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +23,8 @@ import com.resftful.demo.model.Employee;
 public class SampleRestfulService {
 
 	private static Map<String, Employee> employees = new HashMap<String, Employee>();
+
+	// Create static employee object to return back response for REST calls
 
 	static {
 		Employee employee_one = new Employee();
@@ -114,12 +119,8 @@ public class SampleRestfulService {
 	@Consumes("application/json")
 	@Produces("application/json")
 	public Employee postForConsumeJSONRequest(Employee employee) {
-		System.out.println("employee id " + employee.getEmployeeId() + "  "
-				+ employee.getEmployeeName());
 		Employee newEmployeeObject = new Employee(employee.getEmployeeId(),
 				employee.getEmployeeName(), employee.getEmployeeJob());
-		String output = "Hello";
-		System.out.println("Output = = = " + output);
 		return newEmployeeObject;
 	}
 

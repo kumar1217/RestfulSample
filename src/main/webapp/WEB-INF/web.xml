@@ -6,12 +6,15 @@
     
     <display-name>resteasy</display-name>
 
+	<!-- ResteasyBootstrap this is a ServletContextListener that creates the registry for resteasy 
+	and stuffs it as a servlet context attribute.Used to register REST service -->
     <listener>
         <listener-class>
             org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
         </listener-class>
     </listener>
 
+	<!-- Mapping of Resteasy Servlet  -->
     <servlet>
         <servlet-name>Resteasy</servlet-name>
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -22,12 +25,13 @@
         <url-pattern>/restful-services/*</url-pattern>
     </servlet-mapping>
     
+    <!-- Auto scan annotated REST service -->
     <context-param>
          <param-name>resteasy.scan</param-name>
         <param-value>true</param-value>    
     </context-param>
 
-    
+    <!-- set the prefix url, if the url-pattern for the Resteasy servlet-mapping is not /* -->
     <context-param>
         <param-name>resteasy.servlet.mapping.prefix</param-name>
         <param-value>/restful-services</param-value>
